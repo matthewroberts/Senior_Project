@@ -1,0 +1,8 @@
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\bin\Release\EMREC.Core.dll.config
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\bin\Release\EMREC.Core.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\bin\Release\EMREC.Core.pdb
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\bin\Release\itextsharp.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\bin\Release\itextsharp.xtra.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\obj\Release\ResolveAssemblyReference.cache
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\obj\Release\EMREC.Core.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Core\obj\Release\EMREC.Core.pdb

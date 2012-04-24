@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<!-- iPad Settings -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+<!-- iPad Settings End -->
+
+<title>EMREC</title>
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" media="screen" href="lib/datatables/css/vpad.css" />
+<style type = "text/css">
+    #loading-container {position: absolute; top:50%; left:50%;}
+    #loading-content {width:800px; text-align:center; margin-left: -400px; height:50px; margin-top:-25px; line-height: 50px;}
+    #loading-content {font-family: "Helvetica", "Arial", sans-serif; font-size: 18px; color: black; text-shadow: 0px 1px 0px white; }
+    #loading-graphic {margin-right: 0.2em; margin-bottom:-2px;}
+    #loading {background-color:#abc4ff; background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: -o-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: -ms-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); height:100%; width:100%; overflow:hidden; position: absolute; left: 0; top: 0; z-index: 99999;}
+</style>
+<!-- STYLESHEETS END -->
+
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script type="text/javascript" src="js/selectivizr.js"></script>
+<![endif]-->
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/autoresize.jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="js/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+    <script type="text/javascript" src="js/jquery.itextclear.js"></script>
+    <script type="text/javascript" src="js/jquery.hashchange.min.js"></script>
+    <script type="text/javascript" src="js/jquery.drilldownmenu.js"></script>
+    <script type="text/javascript" src="js/jquery.popover.js"></script>
+    <script type="text/javascript" src="js/jquery.wizard.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/PIE.js"></script>
+    <script type="text/javascript" src="js/ie.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="lib/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#loading").fadeOut(function () {
+                $(this).remove();
+                $('body').removeAttr('style');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[type=text], input[type=password], input[type=url], input[type=email], input[type=number], textarea', '.form').iTextClear();
+            
+            $('#searchform .searchbox').length && $('#searchform .searchbox').find('input[type=text]').focus(function () {
+                $('#wrapper > section > aside > nav > ul').fadeOut(function () {
+                    $('#searchform .search_results').show();
+                });
+                $(this).parents('#searchform .searchbox').animate({ marginRight: 70 }).next().fadeIn();
+            });
+
+            $('#searchform .searchcontainer').find('input[type=button]').click(function () {
+                $('#searchform .search_results').hide();
+                $('#searchform .searchbox').find('input[type=text]').val('');
+                $('#searchform .search_results').html('');
+                $('#wrapper > section > aside > nav > ul').fadeIn();
+                $('.searchbox', $(this).parent()).animate({ marginRight: 0 }).next().fadeOut();
+            });
+
+            $('#main-content').bind('drilldown', function () {
+                $("input:checkbox,input:radio,select,input:file", "#main-content").uniform();
+                $(".tabs > ul", "#main-content").tabs("section > section");
+            });
+        });
+    </script>
+</head>
+<body style="overflow: hidden;">
+    <div id="loading"> 
+        <script type = "text/javascript">
+            document.write("<div id='loading-container'><p id='loading-content'>" +
+                           "<img id='loading-graphic' width='16' height='16' src='<%=ResolveUrl("images/ajax-loader-abc4ff.gif") %>' /> " +
+                           "Loading...</p></div>");
+        </script>
+    </div>
+    <div id="wrapper">
+        <header>
+            <h1>
+                <a href="#"></a>
+            </h1>
+            <nav>
+                <div class="container_12">
+                    <div class="grid_12">
+                        <ul class="toolbar clearfix fl">
+	                        <li><a href="<%=ResolveUrl("Default.aspx") %>" id="A2"><span class="search" title="Document Search">Search Document</span></a></li>
+                            <li><a href="<%=ResolveUrl("barcode/Default.aspx") %>" id="A1"><span class="barcode" title="Barcode Generation">Generate Barcode</span></a></li>
+                            <li><a href="<%=ResolveUrl("qc/Default.aspx") %>" id="A3"><span class="qc" title="Quality Control">Quality Control</span></a></li>
+                        </ul>
+                        <a href="login.html" title="Logout" class="button icon-with-text fr"><img src="<%=ResolveUrl("images/navicons-small/129.png") %>" alt=""/>Logout</a>
+                        <div class="user-info fr">
+                            Logged in as admin
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+                <asp:ContentPlaceHolder id="Content" runat="server"></asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

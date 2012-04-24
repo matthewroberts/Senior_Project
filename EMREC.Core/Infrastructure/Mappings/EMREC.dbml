@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mpl" Class="EMRECDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=98.200.84.5\SQLEXPRESS,2301;Initial Catalog=mpl;User ID=admin" SettingsObjectName="EMREC.Core.Properties.Settings" SettingsPropertyName="mplConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblDocumentViews" Member="tblDocumentViews">
+    <Type Name="tblDocumentView">
+      <Column Name="DocumentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateViewed" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="tblDocument_tblDocumentView" Member="tblDocument" ThisKey="DocumentId" OtherKey="Id" Type="tblDocument" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPatient" Member="tblPatients">
+    <Type Name="tblPatient">
+      <Column Name="PatientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChartID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PrescriberID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PatientLastName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientFirstName" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PatientMiddleName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PolicyNumber" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="InactiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="INS1" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="MemberID" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Association Name="tblPatient_tblVisit" Member="tblVisits" ThisKey="PatientID" OtherKey="PatientId" Type="tblVisit" />
+      <Association Name="tblPhysician_tblPatient" Member="tblPhysician" ThisKey="PrescriberID" OtherKey="PrescriberID" Type="tblPhysician" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPhysician" Member="tblPhysicians">
+    <Type Name="tblPhysician">
+      <Column Name="PrescriberID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Specialty" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="tblPhysician_tblPatient" Member="tblPatients" ThisKey="PrescriberID" OtherKey="PrescriberID" Type="tblPatient" />
+      <Association Name="tblPhysician_tblVisit" Member="tblVisits" ThisKey="PrescriberID" OtherKey="PhysicianId" Type="tblVisit" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblQualityControl" Member="tblQualityControls">
+    <Type Name="tblQualityControl">
+      <Column Name="DocumentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QCName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QCDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QCComplete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="QCStation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblDocument_tblQualityControl" Member="tblDocument" ThisKey="DocumentId" OtherKey="Id" Type="tblDocument" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVisits" Member="tblVisits">
+    <Type Name="tblVisit">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhysicianId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="tblVisit_tblDocument" Member="tblDocuments" ThisKey="Id" OtherKey="VisitId" Type="tblDocument" />
+      <Association Name="tblPatient_tblVisit" Member="tblPatient" ThisKey="PatientId" OtherKey="PatientID" Type="tblPatient" IsForeignKey="true" />
+      <Association Name="tblPhysician_tblVisit" Member="tblPhysician" ThisKey="PhysicianId" OtherKey="PrescriberID" Type="tblPhysician" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlbDocumentType" Member="tlbDocumentTypes">
+    <Type Name="tlbDocumentType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tlbDocumentType_tblDocument" Member="tblDocuments" ThisKey="Id" OtherKey="TypeId" Type="tblDocument" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocuments" Member="tblDocuments">
+    <Type Name="tblDocument">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="VisitId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ChartId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ServerPath" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ServerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TypeId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DocumentDate" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="tblDocument_tblDocumentView" Member="tblDocumentViews" ThisKey="Id" OtherKey="DocumentId" Type="tblDocumentView" />
+      <Association Name="tblDocument_tblQualityControl" Member="tblQualityControls" ThisKey="Id" OtherKey="DocumentId" Type="tblQualityControl" />
+      <Association Name="tblVisit_tblDocument" Member="tblVisit" ThisKey="VisitId" OtherKey="Id" Type="tblVisit" IsForeignKey="true" />
+      <Association Name="tlbDocumentType_tblDocument" Member="tlbDocumentType" ThisKey="TypeId" OtherKey="Id" Type="tlbDocumentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblConfigPath" Member="tblConfigPaths">
+    <Type Name="tblConfigPath">
+      <Column Name="pathType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="value" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

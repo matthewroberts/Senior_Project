@@ -1,0 +1,16 @@
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\bin\EMREC.Web.dll
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\bin\EMREC.Web.pdb
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\bin\EMREC.Core.dll
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\bin\EMREC.Core.pdb
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\obj\Debug\EMREC.Web.dll
+C:\Users\mroberts.DWH\Desktop\EMREC.Web\EMREC.Web\obj\Debug\EMREC.Web.pdb
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\bin\EMREC.Web.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\bin\EMREC.Web.pdb
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\bin\BarcodeLib.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\bin\EMREC.Core.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\bin\itextsharp.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\bin\EMREC.Core.pdb
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\obj\Debug\EMREC.Web.dll
+C:\Users\mroberts.DWH\Documents\My Web Sites\EMREC.Web\EMREC.Web\obj\Debug\EMREC.Web.pdb

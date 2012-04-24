@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EMREC">
+  <DataContextMoniker Name="/EMRECDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9e89fcb4-78d1-49df-97a3-48e4e95c2cb8" absoluteBounds="5.625, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/EMRECDataContext/tblDocumentView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1bbc897-5378-416d-8891-c59f0c9af553" absoluteBounds="5.64, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65a19fbd-2619-4886-ad1b-7b385c3a1240" absoluteBounds="5.625, 2, 2, 4.8477197265625">
+      <DataClassMoniker Name="/EMRECDataContext/tblPatient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="243585e4-6483-441c-b9df-2abaa59b7934" absoluteBounds="5.6400000000000006, 2.46, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc05aa6a-da8d-4eb3-9fc6-96ba7f9d6f16" absoluteBounds="3, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/EMRECDataContext/tblPhysician" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05327e23-284a-464d-8cc3-c0f45f4ab6c7" absoluteBounds="3.015, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 4.782900390625); (5.625 : 4.782900390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tblPhysician/tblPhysician_tblPatient" />
+      <nodes>
+        <classShapeMoniker Id="fc05aa6a-da8d-4eb3-9fc6-96ba7f9d6f16" />
+        <classShapeMoniker Id="65a19fbd-2619-4886-ad1b-7b385c3a1240" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b02b215e-7025-4ca5-97bd-53ca5b9320db" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EMRECDataContext/tblQualityControl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b993497-723e-45d9-bbbc-9a2db3aa7b5e" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79b9e4c9-fa34-4d15-820a-8ee70236cbab" absoluteBounds="0.5, 4.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/EMRECDataContext/tblVisit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c40fe501-4b91-404e-891d-9c14f585660d" absoluteBounds="0.51500000000000012, 4.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 5.67234537760417); (2.5 : 5.67234537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tblPatient/tblPatient_tblVisit" />
+      <nodes>
+        <classShapeMoniker Id="65a19fbd-2619-4886-ad1b-7b385c3a1240" />
+        <classShapeMoniker Id="79b9e4c9-fa34-4d15-820a-8ee70236cbab" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 4.85179768880208); (2.5 : 4.85179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tblPhysician/tblPhysician_tblVisit" />
+      <nodes>
+        <classShapeMoniker Id="fc05aa6a-da8d-4eb3-9fc6-96ba7f9d6f16" />
+        <classShapeMoniker Id="79b9e4c9-fa34-4d15-820a-8ee70236cbab" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3ab8d920-4a7d-4f59-88f8-dbc79a677ac8" absoluteBounds="0.5, 2.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/EMRECDataContext/tlbDocumentType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99a3e18b-d192-4735-a3cc-1ce80bf7274f" absoluteBounds="0.51500000000000012, 3.2100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0382622d-d5a8-4d0e-a2f8-d890d0b68705" absoluteBounds="3, 0.625, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/EMRECDataContext/tblDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d35c1e0-df3c-47e3-88b7-dfb17e46829c" absoluteBounds="3.015, 1.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 1.15949625651042); (5.625 : 1.15949625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tblDocument/tblDocument_tblDocumentView" />
+      <nodes>
+        <classShapeMoniker Id="0382622d-d5a8-4d0e-a2f8-d890d0b68705" />
+        <classShapeMoniker Id="9e89fcb4-78d1-49df-97a3-48e4e95c2cb8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 1.44794840494792); (2.5 : 1.44794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tblDocument/tblDocument_tblQualityControl" />
+      <nodes>
+        <classShapeMoniker Id="0382622d-d5a8-4d0e-a2f8-d890d0b68705" />
+        <classShapeMoniker Id="b02b215e-7025-4ca5-97bd-53ca5b9320db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 4.375); (1.5 : 4.125); (2.75 : 4.125); (2.75 : 2.53007890429687); (3 : 2.53007890429687)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tblVisit/tblVisit_tblDocument" />
+      <nodes>
+        <classShapeMoniker Id="79b9e4c9-fa34-4d15-820a-8ee70236cbab" />
+        <classShapeMoniker Id="0382622d-d5a8-4d0e-a2f8-d890d0b68705" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.14985270182292); (2.66666666666667 : 3.14985270182292 : JumpStart); (2.83333333333333 : 3.14985270182292 : JumpEnd); (3 : 3.14985270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EMRECDataContext/tlbDocumentType/tlbDocumentType_tblDocument" />
+      <nodes>
+        <classShapeMoniker Id="3ab8d920-4a7d-4f59-88f8-dbc79a677ac8" />
+        <classShapeMoniker Id="0382622d-d5a8-4d0e-a2f8-d890d0b68705" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fa6bc34c-9d21-419d-a91b-92b11ead2d73" absoluteBounds="3.125, 6.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/EMRECDataContext/tblConfigPath" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d81d2ca7-2ef2-4f65-af80-a8eee036e2aa" absoluteBounds="3.14, 6.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
